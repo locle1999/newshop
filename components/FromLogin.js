@@ -19,7 +19,9 @@ import {
     TextInput,
     TouchableOpacity,
 } from 'react-native';
-
+import ITextInput from './ITextInput';
+import IView from "./IView"
+import IText from './IText';
 export default class FromLogin extends Component {
     state = {
         username: "",
@@ -37,22 +39,88 @@ export default class FromLogin extends Component {
                 >
                     <Image style={[styles.logo]} source={require("../public/logo.png")} />
                     <Text style={[styles.text1]}>Vui lòng nhập số điện thoại</Text>
-                    {/* <TextInput
-                        style={[styles.textInput1]}
+                    <ITextInput
+                        style={{
+                            top: 378,
+                            left: 116,
+                            fontWeight: "normal",
+                            alignItems: "center",
+                            textAlign: "center",
+                            fontFamily: "Roboto",
+                            color: "#FFFFFF",
+                            width: 149,
+                            position: "absolute",
+                            display: "flex"
+                        }}
                         placeholder="Nhập số điện thoại "
                         onChangeText={(username) => { this.setState({ username }) }}
                         value={this.state.username}
-                    /> */}
-                    <Text style={[styles.textInput1]}> Số điện thoại</Text>
+                    />
+
                     <View style={[styles.line1]}></View>
-                    <Text style={[styles.textInput2]}> Mật khẩu</Text>
+                    <ITextInput
+                        style={{
+                            top: 419,
+                            left: 116,
+                            fontWeight: "normal",
+                            alignItems: "center",
+                            textAlign: "center",
+                            fontFamily: "Roboto",
+                            color: "#FFFFFF",
+                            width: 149,
+                            position: "absolute",
+
+                            marginTop: 19
+                        }}
+                        placeholder="Mật khẩu "
+                        onChangeText={(password) => { this.setState({ password }) }}
+                        value={this.state.password}
+                    />
                     <View style={[styles.line2]}></View>
                     <TouchableOpacity>
                         <View style={[styles.button]}>
-                            {/* <Text style={[styles.text2]}> ĐĂNG NHẬP</Text> */}
                         </View>
                         <Text style={[styles.text2]}> ĐĂNG NHẬP</Text>
                     </TouchableOpacity>
+                    <IView style={{
+                        position: "absolute",
+                        width: 243,
+                        height: 19.5,
+                        left: 69,
+                        top: 550,
+                        fontWeight: "normal",
+                        fontSize: 15,
+                        alignItems: "center",
+                        textAlign: "center",
+                        fontFamily: "Roboto",
+                    }}>
+                        <IText style={{ color: "white" }} > Bạn chưa có tài khoản? <IText style={{ color: "yellow" }}>   Đăng ký</IText></IText>
+                    </IView>
+                    <IView style={{
+                        position: "absolute",
+                        width: 201,
+                        // height: 10,
+                        left: 116.59,
+                        top: 630.95,
+                        fontWeight: "normal",
+                        fontSize: 16,
+                        lineHeight: 19,
+                        alignItems: "center",
+                        textAlign: "center",
+                        fontFamily: "Roboto",
+                    }}>
+                        <IText>Gọi chăm sóc khách hàng</IText>
+                    </IView>
+                    <Image
+                        style={{
+                            position: "absolute",
+                            left: "16.32%",
+                            right: "72.91%",
+                            top: 590
+
+                        }}
+
+                        source={require("../public/icon-24h.png")} />
                 </ImageBackground>
 
             </>
@@ -94,20 +162,20 @@ const styles = StyleSheet.create({
         fontWeight: "normal",
         alignItems: "center",
         textAlign: "center",
-        display: "flex"
+
     },
-    textInput1: {
-        top: 378,
-        left: 116,
-        fontWeight: "normal",
-        alignItems: "center",
-        textAlign: "center",
-        fontFamily: "Roboto",
-        color: "#FFFFFF",
-        width: 149,
-        position: "absolute",
-        display: "flex"
-    },
+    // textInput1: {
+    //     top: 378,
+    //     left: 116,
+    //     fontWeight: "normal",
+    //     alignItems: "center",
+    //     textAlign: "center",
+    //     fontFamily: "Roboto",
+    //     color: "#FFFFFF",
+    //     width: 149,
+    //     position: "absolute",
+    //     display: "flex"
+    // },
     line1: {
         backgroundColor: "white",
         height: 0.5,
@@ -117,18 +185,18 @@ const styles = StyleSheet.create({
         borderRadius: 40.5,
         position: "absolute",
     },
-    textInput2: {
-        top: 419,
-        left: 116,
-        fontWeight: "normal",
-        alignItems: "center",
-        textAlign: "center",
-        fontFamily: "Roboto",
-        color: "#FFFFFF",
-        width: 149,
-        position: "absolute",
-        display: "flex"
-    },
+    // textInput2: {
+    //     top: 419,
+    //     left: 116,
+    //     fontWeight: "normal",
+    //     alignItems: "center",
+    //     textAlign: "center",
+    //     fontFamily: "Roboto",
+    //     color: "#FFFFFF",
+    //     width: 149,
+    //     position: "absolute",
+    //     display: "flex"
+    // },
     line2: {
         backgroundColor: "white",
         height: 0.5,
@@ -152,19 +220,19 @@ const styles = StyleSheet.create({
         fontStyle: "normal",
         textAlign: "center",
         display: "flex",
-        alignItems: "center"
+        alignItems: "center",
+
+
     },
     button: {
         position: "absolute",
         width: 280.57,
         height: 40,
         left: 50,
-        top: 280,
+        top: 285,
         borderRadius: 63,
         borderStyle: "solid",
         borderColor: "white",
         borderWidth: 1
-
-
     }
 })
